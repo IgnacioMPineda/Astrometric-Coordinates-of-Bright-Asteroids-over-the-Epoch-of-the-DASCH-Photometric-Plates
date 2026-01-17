@@ -1,5 +1,5 @@
 # Astrometric-Coordinates-of-Bright-Asteroids-over-the-Epoch-of-the-DASCH-Photometric-Plates
-Computing the Astrometric Coordinates of Bright Asteroids over the Epoch of the DASCH Photometric Plates. Work presented in King's College London the 31st of january, 2026. Concluded in an academic paper.
+Computing the Astrometric Coordinates of Bright Asteroids over the Epoch of the DASCH Photometric Plates. Work to be presented in King's College London the 31st of january, 2026. Will conclude in an academic paper.
 
 The Harvard College Observatory's Astronomical Photographic Glass Plate Collection (Plate Stacks) is the largest collection of its kind in the world, with over 550.000 plates that cover both hemispheres.
 
