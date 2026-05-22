@@ -13,76 +13,48 @@ Datafile larger than 10 MB are saved to google drive here
 https://drive.google.com/drive/folders/1s8QCIX3pKO5bhGDZRLQEm9xMqVIvIvRI?usp=drive_link
 
 ## Project Flowchart
-
-+--------------------------------------------------------------+
-| [FILENAME: initial_conditions.*]                             |
-| Initial conditions for ALL asteroids                         |
-+-----------------------------+--------------------------------+
-                              |
-                              |
-                              v
-        +---------------------------------------------+
-        | [SCRIPT: integrator.*]                      |
-        | - Integrates asteroids to target times      |
-        | - Applies light-time correction             |
-        | - Processes ALL asteroids                   |
-        +---------------------+-----------------------+
-                              |
-                              |
-                              v
-+--------------------------------------------------------------+
-| [FILENAME: integrated_asteroids.*]                           |
-| Integrated asteroid positions / ephemerides                  |
-+-----------------------------+--------------------------------+
-                              |
-                              |
-                              v
-        +---------------------------------------------+
-        | [SCRIPT: filtering.*]                       |
-        | - Takes initial/integrated asteroid data    |
-        | - Keeps only asteroids observed in plates   |
-        | - Builds observability table                |
-        +---------------------+-----------------------+
-                              |
-                              |
-                              v
-+--------------------------------------------------------------+
-| [FILENAME: observability.json]                               |
-| For each observed asteroid:                                  |
-| - coordinates                                                |
-| - time of observation                                        |
-| - plate where it was observed                                |
-+-----------------------------+--------------------------------+
-                              |
-                              |
-                              v
-        +---------------------------------------------+
-        | [SCRIPT: astroquery_cutouts.*]              |
-        | Input: plate + coordinates                  |
-        | Output: image cutout                        |
-        +---------------------+-----------------------+
-                              |
-                              |
-                              v
-+--------------------------------------------------------------+
-| [FILENAME: cutout_image.*]                                   |
-| Plate image cutout around asteroid coordinates               |
-+-----------------------------+--------------------------------+
-                              |
-                              |
-                              v
-        +---------------------------------------------+
-        | [SCRIPT: fitting_script.*]                  |
-        | Input: image cutout                         |
-        | Output: fit result                          |
-        | - position                                  |
-        | - brightness                                |
-        | - error bar                                 |
-        +---------------------+-----------------------+
-                              |
-                              |
-                              v
-+--------------------------------------------------------------+
-| [FILENAME: fit_results.*]                                    |
-| Asteroid fitted position, brightness, and uncertainties       |
-+--------------------------------------------------------------+
+```text
+initial_conditions.*
+        |
+        v
++--------------------+
+| integrator.*       |
+| integrates ALL     |
+| asteroids          |
+| light-time corr.   |
++--------------------+
+        |
+        v
+integrated_asteroids.*
+        |
+        v
++--------------------+
+| filtering.*        |
+| keeps asteroids    |
+| observed in plates |
++--------------------+
+        |
+        v
+observability.json
+coords + obs time + plate
+        |
+        v
++--------------------+
+| astroquery_*.py    |
+| plate + coords     |
+| -> cutout image    |
++--------------------+
+        |
+        v
+cutout_image.*
+        |
+        v
++--------------------+
+| fitting_script.*   |
+| image -> position  |
+| brightness + error |
++--------------------+
+        |
+        v
+fit_results.*
+```
