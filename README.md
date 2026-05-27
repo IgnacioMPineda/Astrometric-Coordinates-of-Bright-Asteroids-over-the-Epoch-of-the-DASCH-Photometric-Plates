@@ -16,7 +16,7 @@ https://drive.google.com/drive/folders/1s8QCIX3pKO5bhGDZRLQEm9xMqVIvIvRI?usp=dri
 
 The file "Observability.json" is required for plotting the statistics of the asteroids.
 
-The file 
+The file "targets.csv" is required for the code regarding the filtering of the asteroids.
 
 ## Project Flowchart
 ```text
