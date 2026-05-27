@@ -8,9 +8,15 @@ The Dasch project aimed to digitalize and immortalize this information whilst br
 
 The asteroids chosen have an apparent magnitude under 17 and are considered “bright”. These have a semimajor axis around 1.5 AU.
 
+
+
 Datafile larger than 10 MB are saved to google drive here
 
 https://drive.google.com/drive/folders/1s8QCIX3pKO5bhGDZRLQEm9xMqVIvIvRI?usp=drive_link
+
+The file "Observability.json" is required for plotting the statistics of the asteroids.
+
+The file 
 
 ## Project Flowchart
 ```text
